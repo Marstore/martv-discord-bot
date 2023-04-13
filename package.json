@@ -1,0 +1,23 @@
+{
+  "name": "martv-discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marstore/martv-discord-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marstore/martv-discord-bot/issues"
+  },
+  "homepage": "https://github.com/Marstore/martv-discord-bot#readme",
+  "dependencies": {
+    "discord.js": "^13.15.1"
+  }
+}
