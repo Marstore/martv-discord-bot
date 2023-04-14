@@ -23,7 +23,7 @@ module.exports = {
                 { name: "Premiere 3", value: "https://globosatplay.globo.com/premiere-3/",},
                 { name: "ESPN", value: "https://www.espn.com.br/" },
                 { name: "ESPN 4", value: "https://www.espn.com.br/" },
-                { name: "Star Channel", value: "https://www.starplus.com/br/pt-br/" },
+                { name: "Star Channel", value: "https://www.star-brasil.com/star-channel" },
                 { name: "FX", value: "https://www.fxnetworks.com/" },
                 { name: "Warner", value: "https://www.warnerchannel.com/br/" },
                 { name: "Cartoon", value: "https://www.cartoonnetwork.com.br/" },

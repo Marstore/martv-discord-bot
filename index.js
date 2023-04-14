@@ -3,6 +3,7 @@ const { Client, Intents, Collection } = require('discord.js');
 const { token } = require('./config.json');
 const { firebase, db, serverRef } = require('./firebase');
 const { updateMemberCount } = require('./memberCount');
+const { handleVoiceConnection } = require('./voice');
 
 if (firebase.app()) {
   console.log("Firebase conectado com sucesso!");
@@ -79,10 +80,15 @@ client.on('messageCreate', (message) => {
   
 });
 
+client.on('voiceStateUpdate', (oldState, newState) => {
+  handleVoiceConnection(oldState, newState);
+});
+
 client.on('guildMemberAdd', (member) => {
   serverRef.transaction((currentValue) => {
     return (currentValue || 0) + 1;
   });
 });
+
 
 client.login(token);
