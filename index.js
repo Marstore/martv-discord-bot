@@ -4,7 +4,6 @@ const { token } = require('./config.json');
 const { firebase, db, serverRef } = require('./firebase');
 const { updateMemberCount } = require('./memberCount');
 
-
 if (firebase.app()) {
   console.log("Firebase conectado com sucesso!");
 } else {
@@ -15,7 +14,7 @@ const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
 
-client.commands = new Collection();
+client.commands = new Collection(); 
 
 const commandFolders = fs.readdirSync('./commands');
 for (const folder of commandFolders) {
@@ -47,11 +46,15 @@ client.on('ready', async () => {
   const commands = [
     {
       name: 'ping',
-      description: 'Ping do bot!'
+      description: 'Retorna o ping do bot.'
     },
     {
       name: 'canais',
       description: '😁 Exibe os canais disponíveis no site e app'
+    },
+    {
+      name: 'botinfo',
+      description: 'Mostra informações sobre o bot'
     },
     {
       name: 'rr',
