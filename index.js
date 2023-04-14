@@ -50,6 +50,10 @@ client.on('ready', async () => {
       description: 'Ping do bot!'
     },
     {
+      name: 'canais',
+      description: '😁 Exibe os canais disponíveis no site e app'
+    },
+    {
       name: 'rr',
       description: 'Reinicia o bot'
     }
