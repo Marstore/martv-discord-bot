@@ -49,8 +49,8 @@ client.on('ready', async () => {
 
   const commands = [
     {
-      name: 'status',
-      description: 'Status do site e do bot.'
+      name: 'ping',
+      description: 'Retorna o ping do bot e outras informaçãos.'
     },
     {
       name: 'canais',
@@ -58,7 +58,7 @@ client.on('ready', async () => {
     },
     {
       name: 'botinfo',
-      description: 'Mostra informações sobre o bot'
+      description: 'Mostra informações sobre o bot.'
     },
     {
       name: 'userinfo',
@@ -66,7 +66,7 @@ client.on('ready', async () => {
     },
     {
       name: 'rr',
-      description: 'Reinicia o bot'
+      description: 'Reinicia o bot.'
     }
   ];
 
