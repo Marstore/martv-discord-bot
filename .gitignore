@@ -1,5 +1,6 @@
 config.json
 package-lock.json
+log.json
 
 # Logs
 logs

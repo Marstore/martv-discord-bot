@@ -33,8 +33,6 @@ client.on('interactionCreate', async interaction => {
   }
 });
 
-client.login(token);
-
 client.on('ready', async () => {
   console.log(`Logado como ${client.user.tag}!`);
 
@@ -44,15 +42,12 @@ client.on('ready', async () => {
       description: 'Ping do bot!'
     },
     {
-        name: 'canais',
-        description: 'Mostre os canais que temos no site e no app'
-      },
-    {
       name: 'rr',
       description: 'Reinicia o bot'
     }
   ];
-  
+
+  const logger = require('./logger.js')(client);
 
   const commandGuild = await client.guilds.cache.get('878309207433150564');
   const commandManager = commandGuild.commands;
@@ -65,3 +60,10 @@ client.on('ready', async () => {
     console.error(error);
   }
 });
+
+// Logger de mensagens
+client.on('messageCreate', (message) => {
+  // ...
+});
+
+client.login(token);
