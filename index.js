@@ -58,6 +58,10 @@ client.on('ready', async () => {
       description: 'Mostra informações sobre o bot'
     },
     {
+      name: 'userinfo',
+      description: 'Exibe informações sobre o usuário.',
+    },
+    {
       name: 'rr',
       description: 'Reinicia o bot'
     }
