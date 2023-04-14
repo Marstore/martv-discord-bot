@@ -12,7 +12,7 @@ module.exports = {
     const embed = new MessageEmbed()
       .setColor('#0099ff')
       .setTitle('Pong!')
-      .setDescription(`🏓 O ping do bot é de ${ping}ms`);
+      .setDescription(`O ping do bot é de ${ping}ms 🏓`);
 
     const message = await interaction.reply({ embeds: [embed] });
 
