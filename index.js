@@ -1,9 +1,10 @@
 const fs = require('fs');
 const { Client, Intents, Collection } = require('discord.js');
-const { token } = require('./config.json');
+const { token, statusMessages, statusInterval } = require('./config.json');
 const { firebase, db, serverRef } = require('./firebase');
 const { updateMemberCount } = require('./memberCount');
 const { handleVoiceConnection } = require('./voice');
+const { setStatus } = require('./status');
 
 if (firebase.app()) {
   console.log("Firebase conectado com sucesso!");
@@ -43,6 +44,8 @@ client.on('interactionCreate', async interaction => {
 
 client.on('ready', async () => {
   console.log(`Logado como ${client.user.tag}!`);
+
+  setStatus(client);
 
   const commands = [
     {
@@ -93,6 +96,5 @@ client.on('guildMemberAdd', (member) => {
     return (currentValue || 0) + 1;
   });
 });
-
 
 client.login(token);
