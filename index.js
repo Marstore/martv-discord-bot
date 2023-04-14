@@ -1,7 +1,9 @@
 const fs = require('fs');
 const { Client, Intents, Collection } = require('discord.js');
-const { token, prefix } = require('./config.json');
-const firebase = require('./firebase.js');
+const { token } = require('./config.json');
+const { firebase, db, serverRef } = require('./firebase');
+const { updateMemberCount } = require('./memberCount');
+
 
 if (firebase.app()) {
   console.log("Firebase conectado com sucesso!");
@@ -15,7 +17,6 @@ const client = new Client({
 
 client.commands = new Collection();
 
-// Carregar comandos
 const commandFolders = fs.readdirSync('./commands');
 for (const folder of commandFolders) {
   const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
@@ -59,7 +60,6 @@ client.on('ready', async () => {
   const commandGuild = await client.guilds.cache.get('878309207433150564');
   const commandManager = commandGuild.commands;
 
- 
   try {
     await commandManager.set(commands);
     console.log('Comandos Slash registrados com sucesso!');
@@ -68,9 +68,14 @@ client.on('ready', async () => {
   }
 });
 
-
 client.on('messageCreate', (message) => {
   
+});
+
+client.on('guildMemberAdd', (member) => {
+  serverRef.transaction((currentValue) => {
+    return (currentValue || 0) + 1;
+  });
 });
 
 client.login(token);
