@@ -49,8 +49,8 @@ client.on('ready', async () => {
 
   const commands = [
     {
-      name: 'ping',
-      description: 'Retorna o ping do bot.'
+      name: 'status',
+      description: 'Status do site e do bot.'
     },
     {
       name: 'canais',
