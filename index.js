@@ -1,6 +1,13 @@
 const fs = require('fs');
 const { Client, Intents, Collection } = require('discord.js');
 const { token, prefix } = require('./config.json');
+const firebase = require('./firebase.js');
+
+if (firebase.app()) {
+  console.log("Firebase conectado com sucesso!");
+} else {
+  console.log("Erro ao conectar ao Firebase.");
+}
 
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
@@ -52,7 +59,7 @@ client.on('ready', async () => {
   const commandGuild = await client.guilds.cache.get('878309207433150564');
   const commandManager = commandGuild.commands;
 
-  // Registra os comandos Slash
+ 
   try {
     await commandManager.set(commands);
     console.log('Comandos Slash registrados com sucesso!');
@@ -61,9 +68,9 @@ client.on('ready', async () => {
   }
 });
 
-// Logger de mensagens
+
 client.on('messageCreate', (message) => {
-  // ...
+  
 });
 
 client.login(token);

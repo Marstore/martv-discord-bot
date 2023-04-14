@@ -3,10 +3,10 @@ const fs = require('fs');
 module.exports = (client) => {
   
     client.on('messageCreate', (message) => {
-      // Ignora mensagens enviadas por bots
+      
       if (message.author.bot) return;
   
-      // Constrói o objeto de mensagem para registro
+      
       const logMessage = {
         author: {
           tag: message.author.tag,
@@ -20,7 +20,7 @@ module.exports = (client) => {
         timestamp: new Date(),
       };
   
-      // Lê o arquivo de log atual e adiciona o objeto de mensagem ao array de mensagens
+      
       let logData = [];
       if (fs.existsSync('log.json')) {
         const fileData = fs.readFileSync('log.json', { encoding: 'utf8' });
@@ -28,7 +28,7 @@ module.exports = (client) => {
       }
       logData.push(logMessage);
   
-      // Escreve o array atualizado no arquivo de log
+
       fs.writeFileSync('log.json', JSON.stringify(logData, null, 2));
     });
   };

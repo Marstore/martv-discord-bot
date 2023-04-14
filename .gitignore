@@ -1,6 +1,7 @@
 config.json
 package-lock.json
 log.json
+firebaseConfig.json
 
 # Logs
 logs
