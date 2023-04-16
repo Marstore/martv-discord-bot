@@ -6,10 +6,10 @@ module.exports = {
         .setName("canais")
         .setDescription("😁 Exibe os canais disponíveis no site e app"),
     async execute(interaction) {
-        const embed = new MessageEmbed()
-            .setTitle("Canais Disponíveis")
-            .setDescription("Veja abaixo os canais disponíveis no site e app:")
-            .addFields(
+        const embed = {
+            color: 0x232ac3,
+            title: 'Canais Disponíveis',
+            fields: [
                 { name: "TV Globo SP", value: "https://redeglobo.globo.com/sao-paulo/"},
                 { name: "SBT", value: "https://www.sbt.com.br/" },
                 { name: "Band", value: "https://www.band.uol.com.br/" },
@@ -45,9 +45,10 @@ module.exports = {
                 { name: "BBB 8", value: "https://vitrine.globo.com/assine/bbb" },
                 { name: "BBB 9", value: "https://vitrine.globo.com/assine/bbb" },
                 { name: "BBB 10", value: "https://vitrine.globo.com/assine/bbb" }
-            )
-            .setColor("BLUE");
-
-        await interaction.reply({ embeds: [embed] });
+            ]
+        };
+         
+        interaction.reply({ embeds: [embed] });
     },
-};
+  };
+  

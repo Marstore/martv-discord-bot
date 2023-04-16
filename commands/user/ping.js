@@ -6,17 +6,19 @@ module.exports = {
     .setName('ping')
     .setDescription('Retorna o ping do bot e outras informações.'),
   async execute(interaction) {
-    await interaction.deferReply();
-
     const botPing = Math.round(interaction.client.ws.ping);
     const timestamp = new Date().getTime();
     const apiPing = Math.round(timestamp - interaction.createdTimestamp);
 
-    const embed = new MessageEmbed()
-      .setColor('#0099ff')
-      .setTitle('🏓 Ping')
-      .setDescription(`Bot: ${botPing}ms\nAPI: ${apiPing}ms`);
+    const embed = {
+       color: 0x232ac3,
+       title:'🏓 Ping',
+       fields: [
+        { name: 'Bot', value: `${botPing}ms`, inline: true },
+        { name: 'API', value: `${apiPing}ms`, inline: true }
+      ]
+    };
 
-    await interaction.editReply({ embeds: [embed] });
+    interaction.reply({ embeds: [embed] });
   },
 };

@@ -53,6 +53,10 @@ client.on('ready', async () => {
       description: 'Retorna o ping do bot e outras informaçãos.'
     },
     {
+      name: 'avatar',
+      description: 'Exibe o avatar de um usuário.'
+    },
+    {
       name: 'canais',
       description: '😁 Exibe os canais disponíveis no site e app'
     },

@@ -13,21 +13,21 @@ module.exports = {
     .setName('botinfo')
     .setDescription('Mostra informações sobre o bot'),
   async execute(interaction) {
-    const embed = new MessageEmbed()
-      .setTitle('Informações do bot')
-      .addField('Versão Do Bot', packageJson.version)
-      .addField('Repositório', 'https://github.com/Marstore/martv-discord-bot')
-      .addField('Linguagem', 'JavaScript')
-      .addField('Node.js Versão', nodeVersion)
-      .addField('Discord.js Versão', djsVersion)
-      .addField('Ping', `${interaction.client.ws.ping}ms`)
-      .addField('API Latência', `${Date.now() - interaction.createdTimestamp}ms`)
-      .addField('Ping da Hospedagem', `${Math.round(Date.now() - (interaction.createdTimestamp + interaction.client.ws.ping))}ms`)
-      .addFields(
+    const embed = {
+      color: 0x232ac3,
+      title: 'Informações do bot',
+      fields: [
+        { name: 'Versão Do Bot', value: packageJson.version },
+        { name: 'Repositório', value: 'https://github.com/Marstore/martv-discord-bot' },
+        { name: 'Linguagem', value: 'JavaScript' },
+        { name: 'Discord.js Versão', value: djsVersion },
+        { name: 'Ping', value: `${interaction.client.ws.ping}ms` },
+        { name: 'API Latência', value: `${Date.now() - interaction.createdTimestamp}ms` },
+        { name: 'Ping da Hospedagem', value: `${Math.round(Date.now() - (interaction.createdTimestamp + interaction.client.ws.ping))}ms` },
         { name: 'Tempo de atividade', value: moment.duration(interaction.client.uptime).format('d[d ]h[h ]m[m ]s[s]'), inline: true },
         { name: 'Última reinicialização', value: moment().subtract(process.uptime(), 'seconds').locale('pt-br').format('LLLL'), inline: true }
-      )
-      .setColor('BLUE');
+      ]
+    };
 
     interaction.reply({ embeds: [embed] });
   },
