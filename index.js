@@ -48,10 +48,7 @@ client.on('ready', async () => {
   setStatus(client);
 
   const commands = [
-    {
-      name: 'ping',
-      description: 'Retorna o ping do bot e outras informaçãos.'
-    },
+    
     {
       name: 'avatar',
       description: 'Exibe o avatar de um usuário.'
