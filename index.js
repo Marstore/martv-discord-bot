@@ -70,8 +70,8 @@ client.on('ready', async () => {
       description: 'Reinicia o bot.'
     }
   ];
-
-  const logger = require('./logger.js')(client);
+  const logChannelId = '1018375967837794375'; 
+  require('./logMessage')(client, logChannelId);
 
   const commandGuild = await client.guilds.cache.get('878309207433150564');
   const commandManager = commandGuild.commands;
