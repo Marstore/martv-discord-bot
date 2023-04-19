@@ -18,7 +18,8 @@ module.exports = (client, logChannelId) => {
       content: message.content,
       timestamp: new Date(),
     };
-    
+
     logChannel.send(JSON.stringify(logMessage, null, 2));
+  
   });
 };
