@@ -66,6 +66,10 @@ client.on('ready', async () => {
       description: 'Exibe informações sobre o usuário.',
     },
     {
+      name: 'martv',
+      description: 'Mostra informações sobre a plataforma Martv.',
+    },
+    {
       name: 'rr',
       description: 'Reinicia o bot.'
     }
