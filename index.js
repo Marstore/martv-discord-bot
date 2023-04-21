@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { Client, Intents, Collection } = require('discord.js');
+const { Client, Intents, Collection, MessageEmbed } = require('discord.js');
 const { token, statusMessages, statusInterval } = require('./config/config.json');
 const { firebase, db, serverRef } = require('./database/firebase');
 const { handleVoiceConnection } = require('./config/voice');
@@ -74,7 +74,7 @@ client.on('ready', async () => {
     }
   ];
   const logChannelId = '1018375967837794375'; 
-  require('./logMessage')(client, logChannelId);
+  require('./system/logMessage')(client, logChannelId);
 
   const commandGuild = await client.guilds.cache.get('878309207433150564');
   const commandManager = commandGuild.commands;
