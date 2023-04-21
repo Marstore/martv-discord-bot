@@ -1,6 +1,6 @@
 const fs = require('fs');
-const { Client, Intents, Collection, MessageEmbed } = require('discord.js');
-const { token, statusMessages, statusInterval } = require('./config.json');
+const { Client, Intents, Collection } = require('discord.js');
+const { token, statusMessages, statusInterval } = require('./config/config.json');
 const { firebase, db, serverRef } = require('./database/firebase');
 const { handleVoiceConnection } = require('./config/voice');
 const { setStatus } = require('./config/status');
