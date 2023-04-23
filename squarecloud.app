@@ -2,3 +2,4 @@ DISPLAY_NAME=martv
 MAIN=index.js
 MEMORY=100
 VERSION=recommended
+AVATAR=https://cdn.discordapp.com/attachments/1023778230722891836/1096688581734584401/LOGO-COM-PALETA.png
