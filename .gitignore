@@ -4,6 +4,8 @@ log.json
 firebaseConfig.json
 database
 config
+.vscode
+squarecloud.app
 
 # Logs
 logs
