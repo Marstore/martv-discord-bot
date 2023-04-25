@@ -19,7 +19,7 @@ module.exports = {
         const embed = {
           color: 0x232ac3,
           title: 'Martv',
-          description: "é um site que oferece acesso gratuito a uma variedade de canais de TV ao vivo, filmes e séries de TV e STREAMING. Ele é atualizado regularmente com novos conteúdos e oferece opções de transmissão em alta qualidade. Uma das melhores coisas sobre o Martv é que ele é totalmente gratuito. Você não precisa se registrar ou pagar para acessar seu conteúdo. Além disso, o site é fácil de usar e navegar, tornando-o uma ótima opção para aqueles que procuram uma maneira simples e rápida de assistir a seus programas favoritos. Em resumo, o Martv é uma ótima opção para quem procura uma maneira fácil e gratuita de assistir a canais de TV ao vivo, filmes e séries de TV. Com seu amplo conteúdo e interface amigável, é uma escolha conveniente e acessível para quem quer entretenimento sem sair de casa.",
+          description: "O que é MarTv? É um site totalmente gratuito para assistir a canais de televisão abertos e fechados, bem como filmes e séries, diretamente em seu navegador ou por meio de um aplicativo. Criamos esse site para pessoas que não têm televisão em casa ou não têm condições de pagar por serviços como a SKY. Você pode acessar o site através do link https://martv.marstore.repl.co/ . Por favor, ajude nossa equipe, já que ainda não temos todos os canais disponíveis. Se você tiver sugestões, pode compartilhá-las conosco no chat.",
           fields: [
             { name: 'Ping do site', value: `${ping}ms` },
             { name: 'Ping do bot', value: `${Math.round(interaction.client.ws.ping)}ms` },
